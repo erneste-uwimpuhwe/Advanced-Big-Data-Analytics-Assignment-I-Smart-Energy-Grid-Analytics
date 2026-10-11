@@ -1,7 +1,7 @@
 venv/
 data/
 timescaledb_install/
-screenshots/
+/screenshots/
 __pycache__/
 *.pyc
 .env
