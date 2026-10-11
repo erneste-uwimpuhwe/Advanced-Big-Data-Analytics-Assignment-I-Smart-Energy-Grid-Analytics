@@ -1,0 +1,16 @@
+2026-10-10 10:59:03,875 INFO energy_live rows at start: 0
+2026-10-10 10:59:05,969 INFO Connected to broker localhost:1883 (Success)
+2026-10-10 10:59:05,989 INFO Subscribed to energy/meters/#, granted QoS: ['Granted QoS 1']
+2026-10-10 10:59:05,990 INFO READY - now start the publisher in the other window
+2026-10-10 10:59:53,702 INFO Processed 500 messages so far
+2026-10-10 10:59:53,916 INFO Processed 1000 messages so far
+2026-10-10 10:59:54,112 INFO Processed 1500 messages so far
+2026-10-10 10:59:54,348 INFO Processed 2000 messages so far
+2026-10-10 11:00:09,403 INFO ===== SUBSCRIBER SUMMARY =====
+2026-10-10 11:00:09,406 INFO Messages received by subscriber : 2000
+2026-10-10 11:00:09,407 INFO   of which redelivered (DUP)    : 0
+2026-10-10 11:00:09,407 INFO   topic/meter_id mismatches     : 0
+2026-10-10 11:00:09,408 INFO   parse errors                  : 0
+2026-10-10 11:00:09,408 INFO   insert errors                 : 0
+2026-10-10 11:00:09,408 INFO Rows inserted (committed)       : 2000
+2026-10-10 11:00:09,408 INFO Rows in energy_live (query)     : 2000

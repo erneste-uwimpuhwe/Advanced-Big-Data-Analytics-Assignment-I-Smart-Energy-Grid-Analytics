@@ -1,0 +1,9 @@
+{
+  "machine": "Erneste",
+  "client": "Python 3.13.6 + psycopg2 2.9.13 (dt dec pq3 ext lo64)",
+  "timer": "time.perf_counter() (submission to fetchall completion)",
+  "session_start_cat": "2026-10-03T18:38:30.208+02:00",
+  "session_end_cat": "2026-10-03T18:43:19.555+02:00",
+  "session_seconds": 289.346,
+  "all_results_match": true
+}

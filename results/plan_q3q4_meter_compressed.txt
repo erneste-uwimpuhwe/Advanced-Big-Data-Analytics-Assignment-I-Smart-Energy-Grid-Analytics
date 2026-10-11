@@ -1,0 +1,238 @@
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Sort (actual time=2662.368..2749.705 rows=4000.00 loops=1)
+   Sort Key: energy_meter_compressed.meter_id
+   Sort Method: quicksort  Memory: 222kB
+   Buffers: shared hit=340218 read=3
+   ->  Finalize HashAggregate (actual time=2650.478..2743.436 rows=4000.00 loops=1)
+         Group Key: energy_meter_compressed.meter_id
+         Batches: 1  Memory Usage: 425kB
+         Buffers: shared hit=340215 read=3
+         ->  Gather (actual time=7.377..2592.889 rows=116000.00 loops=1)
+               Workers Planned: 4
+               Workers Launched: 4
+               Buffers: shared hit=340215 read=3
+               ->  Parallel Append (actual time=1.012..2446.268 rows=23200.00 loops=5)
+                     Buffers: shared hit=340215 read=3
+                     ->  Custom Scan (VectorAgg) (actual time=0.824..220.403 rows=4000.00 loops=1)
+                           Buffers: shared hit=12138
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_309_chunk (actual time=0.000..0.002 rows=380212.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_309_chunk_compressed (actual time=0.092..7.186 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.520..316.481 rows=4000.00 loops=1)
+                           Buffers: shared hit=12138
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_308_chunk (actual time=0.000..0.002 rows=380211.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_308_chunk_compressed (actual time=0.286..7.848 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.976..301.178 rows=4000.00 loops=1)
+                           Buffers: shared hit=12138
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_306_chunk (actual time=0.000..0.002 rows=380204.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_306_chunk_compressed (actual time=0.064..6.355 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.349..328.716 rows=4000.00 loops=1)
+                           Buffers: shared hit=12138
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_305_chunk (actual time=0.000..0.001 rows=380156.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_305_chunk_compressed (actual time=0.374..10.208 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.674..427.381 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_311_chunk (actual time=0.000..0.001 rows=380152.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_311_chunk_compressed (actual time=0.122..10.533 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.852..449.287 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_292_chunk (actual time=0.000..0.001 rows=380151.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_292_chunk_compressed (actual time=0.348..5.628 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.588..448.499 rows=4000.00 loops=1)
+                           Buffers: shared hit=12126
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_301_chunk (actual time=0.000..0.002 rows=380151.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_301_chunk_compressed (actual time=0.019..11.857 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.865..501.592 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_316_chunk (actual time=0.000..0.001 rows=380147.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_316_chunk_compressed (actual time=0.076..3.678 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.693..527.420 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_295_chunk (actual time=0.000..0.001 rows=380144.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_295_chunk_compressed (actual time=0.018..3.631 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.519..491.725 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_294_chunk (actual time=0.000..0.001 rows=380126.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_294_chunk_compressed (actual time=0.016..5.252 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.994..461.285 rows=4000.00 loops=1)
+                           Buffers: shared hit=12126
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_299_chunk (actual time=0.000..0.001 rows=380123.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_299_chunk_compressed (actual time=0.031..3.556 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.226..495.435 rows=4000.00 loops=1)
+                           Buffers: shared hit=12126
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_297_chunk (actual time=0.000..0.001 rows=380122.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_297_chunk_compressed (actual time=0.026..3.467 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.219..430.087 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_312_chunk (actual time=0.000..0.001 rows=380121.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_312_chunk_compressed (actual time=0.024..13.475 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.984..420.042 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_302_chunk (actual time=0.000..0.002 rows=380203.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_302_chunk_compressed (actual time=0.018..14.651 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.703..397.833 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_303_chunk (actual time=0.000..0.001 rows=380096.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_303_chunk_compressed (actual time=0.023..10.866 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.012..419.037 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_313_chunk (actual time=0.000..0.001 rows=380185.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_313_chunk_compressed (actual time=0.041..9.809 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.614..420.186 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_290_chunk (actual time=0.000..0.002 rows=380089.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_290_chunk_compressed (actual time=0.056..3.481 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.161..390.989 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_307_chunk (actual time=0.000..0.001 rows=380088.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_307_chunk_compressed (actual time=0.023..4.012 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.497..408.482 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_314_chunk (actual time=0.000..0.001 rows=380157.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_314_chunk_compressed (actual time=0.025..3.708 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.536..480.030 rows=4000.00 loops=1)
+                           Buffers: shared hit=12126
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_298_chunk (actual time=0.000..0.001 rows=380149.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_298_chunk_compressed (actual time=0.026..3.416 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.388..218.603 rows=2000.00 loops=2)
+                           Buffers: shared hit=12150
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_310_chunk (actual time=0.000..0.001 rows=190026.50 loops=2)
+                                 ->  Parallel Seq Scan on _hyper_5_310_chunk_compressed (actual time=0.045..1.741 rows=2000.00 loops=2)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.022..211.448 rows=2000.00 loops=2)
+                           Buffers: shared hit=12150
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_300_chunk (actual time=0.000..0.001 rows=190061.50 loops=2)
+                                 ->  Parallel Seq Scan on _hyper_5_300_chunk_compressed (actual time=0.019..1.618 rows=2000.00 loops=2)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=2.331..91.699 rows=800.00 loops=5)
+                           Buffers: shared hit=12200
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_315_chunk (actual time=0.000..0.001 rows=95029.75 loops=4)
+                                 ->  Parallel Seq Scan on _hyper_5_315_chunk_compressed (actual time=0.014..0.573 rows=800.00 loops=5)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=2.719..331.413 rows=2000.00 loops=2)
+                           Buffers: shared hit=12150
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_296_chunk (actual time=0.000..0.001 rows=190056.50 loops=2)
+                                 ->  Parallel Seq Scan on _hyper_5_296_chunk_compressed (actual time=0.026..1.666 rows=2000.00 loops=2)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=1.312..404.590 rows=4000.00 loops=1)
+                           Buffers: shared hit=12125
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_293_chunk (actual time=0.000..0.001 rows=380019.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_293_chunk_compressed (actual time=0.043..3.782 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=5.652..560.488 rows=4000.00 loops=1)
+                           Buffers: shared hit=12124 read=1
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_304_chunk (actual time=0.000..0.002 rows=380100.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_304_chunk_compressed (actual time=0.066..3.841 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=2.886..545.049 rows=4000.00 loops=1)
+                           Buffers: shared hit=12124 read=1
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_291_chunk (actual time=0.000..0.002 rows=380087.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_291_chunk_compressed (actual time=0.015..7.177 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=2.758..300.793 rows=4000.00 loops=1)
+                           Buffers: shared hit=12124 read=1
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_317_chunk (actual time=0.000..0.002 rows=348417.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_317_chunk_compressed (actual time=0.055..7.317 rows=4000.00 loops=1)
+                                       Buffers: shared hit=100
+                     ->  Custom Scan (VectorAgg) (actual time=0.356..47.840 rows=4000.00 loops=1)
+                           Buffers: shared hit=512
+                           ->  Custom Scan (ColumnarScan) on _hyper_5_289_chunk (actual time=0.000..0.002 rows=31717.00 loops=1)
+                                 ->  Parallel Seq Scan on _hyper_5_289_chunk_compressed (actual time=0.234..18.719 rows=4000.00 loops=1)
+                                       Buffers: shared hit=512
+ Planning:
+   Buffers: shared hit=7129 read=73
+ Planning Time: 292.902 ms
+ Execution Time: 2754.164 ms
+(163 rows)
+
+                                                                                                                   QUERY PLAN                                                                                                                    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=6.178..6.212 rows=1.00 loops=1)
+   Buffers: shared hit=223 read=14
+   ->  Append (actual time=1.201..6.145 rows=8.00 loops=1)
+         Buffers: shared hit=223 read=14
+         ->  Custom Scan (VectorAgg) (actual time=1.199..1.203 rows=1.00 loops=1)
+               Buffers: shared hit=46
+               ->  Custom Scan (ColumnarScan) on _hyper_5_310_chunk (actual time=0.000..0.002 rows=8.00 loops=1)
+                     Vectorized Filter: ((event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     Rows Removed by Filter: 86
+                     ->  Index Scan using _hyper_5_310_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_310_chunk_compressed (actual time=0.228..0.231 rows=1.00 loops=1)
+                           Index Cond: ((meter_id = 1000000000) AND (_ts_meta_v2_first_event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (_ts_meta_v2_last_event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                           Index Searches: 1
+                           Buffers: shared hit=12
+         ->  Custom Scan (VectorAgg) (actual time=0.518..0.522 rows=1.00 loops=1)
+               Buffers: shared hit=32 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_311_chunk (actual time=0.000..0.002 rows=93.00 loops=1)
+                     ->  Index Scan using _hyper_5_311_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_311_chunk_compressed (actual time=0.253..0.254 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=0.472..0.476 rows=1.00 loops=1)
+               Buffers: shared hit=32 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_312_chunk (actual time=0.000..0.002 rows=94.00 loops=1)
+                     ->  Index Scan using _hyper_5_312_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_312_chunk_compressed (actual time=0.221..0.223 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=0.968..0.972 rows=1.00 loops=1)
+               Buffers: shared hit=32 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_313_chunk (actual time=0.000..0.002 rows=95.00 loops=1)
+                     ->  Index Scan using _hyper_5_313_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_313_chunk_compressed (actual time=0.737..0.739 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=0.513..0.518 rows=1.00 loops=1)
+               Buffers: shared hit=32 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_314_chunk (actual time=0.000..0.002 rows=95.00 loops=1)
+                     ->  Index Scan using _hyper_5_314_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_314_chunk_compressed (actual time=0.269..0.271 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=0.629..0.634 rows=1.00 loops=1)
+               Buffers: shared hit=7 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_315_chunk (actual time=0.000..0.002 rows=93.00 loops=1)
+                     ->  Index Scan using _hyper_5_315_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_315_chunk_compressed (actual time=0.533..0.534 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=0.761..0.766 rows=1.00 loops=1)
+               Buffers: shared hit=32 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_316_chunk (actual time=0.000..0.002 rows=96.00 loops=1)
+                     ->  Index Scan using _hyper_5_316_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_316_chunk_compressed (actual time=0.458..0.461 rows=1.00 loops=1)
+                           Index Cond: (meter_id = 1000000000)
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+         ->  Custom Scan (VectorAgg) (actual time=1.025..1.029 rows=1.00 loops=1)
+               Buffers: shared hit=10 read=2
+               ->  Custom Scan (ColumnarScan) on _hyper_5_317_chunk (actual time=0.000..0.001 rows=85.00 loops=1)
+                     Vectorized Filter: ((event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     ->  Index Scan using _hyper_5_317_chunk_compressed_meter_id__ts_meta_v2_first_ev_idx on _hyper_5_317_chunk_compressed (actual time=0.865..0.869 rows=1.00 loops=1)
+                           Index Cond: ((meter_id = 1000000000) AND (_ts_meta_v2_first_event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (_ts_meta_v2_last_event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                           Index Searches: 1
+                           Buffers: shared hit=1 read=2
+ Planning:
+   Buffers: shared hit=356 read=1
+ Planning Time: 12.812 ms
+ Execution Time: 7.663 ms
+(67 rows)
+

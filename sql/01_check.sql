@@ -1,0 +1,10 @@
+SELECT current_database(), now();
+SELECT version();
+SELECT extname, extversion FROM pg_extension WHERE extname = 'timescaledb';
+SHOW timezone;
+SELECT datname, spcname FROM pg_database d JOIN pg_tablespace t ON d.dattablespace = t.oid WHERE datname = 'smart_grid';
+SHOW shared_buffers;
+SHOW work_mem;
+SHOW max_parallel_workers_per_gather;
+SHOW jit;
+SELECT time_bucket('1 day', now(), 'Africa/Kigali') AS cat_midnight_today;

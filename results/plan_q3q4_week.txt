@@ -1,0 +1,84 @@
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Sort (actual time=10978.064..11139.705 rows=4000.00 loops=1)
+   Sort Key: energy_readings_week.meter_id
+   Sort Method: quicksort  Memory: 222kB
+   Buffers: shared hit=120957
+   ->  Finalize HashAggregate (actual time=10971.986..11135.474 rows=4000.00 loops=1)
+         Group Key: energy_readings_week.meter_id
+         Batches: 1  Memory Usage: 409kB
+         Buffers: shared hit=120954
+         ->  Gather (actual time=3921.564..11075.849 rows=48000.00 loops=1)
+               Workers Planned: 4
+               Workers Launched: 4
+               Buffers: shared hit=120954
+               ->  Parallel Append (actual time=8311.226..10692.125 rows=9600.00 loops=5)
+                     Buffers: shared hit=120954
+                     ->  Partial HashAggregate (actual time=6656.497..6660.122 rows=4000.00 loops=2)
+                           Group Key: _hyper_3_258_chunk.meter_id
+                           Buffers: shared hit=30240
+                           Worker 0:  Batches: 1  Memory Usage: 409kB
+                           Worker 3:  Batches: 1  Memory Usage: 409kB
+                           ->  Parallel Seq Scan on _hyper_3_258_chunk (actual time=1.062..4963.196 rows=1330520.50 loops=2)
+                                 Buffers: shared hit=30240
+                     ->  Partial HashAggregate (actual time=2581.048..2583.996 rows=4000.00 loops=5)
+                           Group Key: _hyper_3_257_chunk.meter_id
+                           Batches: 1  Memory Usage: 409kB
+                           Buffers: shared hit=30239
+                           Worker 0:  Batches: 1  Memory Usage: 409kB
+                           Worker 1:  Batches: 1  Memory Usage: 409kB
+                           Worker 2:  Batches: 1  Memory Usage: 409kB
+                           Worker 3:  Batches: 1  Memory Usage: 409kB
+                           ->  Parallel Seq Scan on _hyper_3_257_chunk (actual time=1.064..1919.446 rows=532190.40 loops=5)
+                                 Buffers: shared hit=30239
+                     ->  Partial HashAggregate (actual time=4439.163..4442.036 rows=2666.67 loops=3)
+                           Group Key: _hyper_3_256_chunk.meter_id
+                           Batches: 1  Memory Usage: 409kB
+                           Buffers: shared hit=30237
+                           Worker 1:  Batches: 1  Memory Usage: 409kB
+                           Worker 3:  Batches: 1  Memory Usage: 161kB
+                           ->  Parallel Seq Scan on _hyper_3_256_chunk (actual time=0.377..3313.275 rows=886941.33 loops=3)
+                                 Buffers: shared hit=30237
+                     ->  Partial HashAggregate (actual time=4976.891..4979.405 rows=4000.00 loops=2)
+                           Group Key: _hyper_3_259_chunk.meter_id
+                           Batches: 1  Memory Usage: 409kB
+                           Buffers: shared hit=21239
+                           Worker 0:  Batches: 1  Memory Usage: 409kB
+                           ->  Parallel Seq Scan on _hyper_3_259_chunk (actual time=0.671..3789.936 rows=934512.50 loops=2)
+                                 Buffers: shared hit=21239
+                     ->  Partial HashAggregate (actual time=3913.900..3918.075 rows=4000.00 loops=1)
+                           Group Key: _hyper_3_255_chunk.meter_id
+                           Batches: 1  Memory Usage: 409kB
+                           Buffers: shared hit=8999
+                           ->  Parallel Seq Scan on _hyper_3_255_chunk (actual time=0.423..2908.791 rows=791893.00 loops=1)
+                                 Buffers: shared hit=8999
+ Planning:
+   Buffers: shared hit=849 read=19
+ Planning Time: 115.194 ms
+ Execution Time: 11144.383 ms
+(56 rows)
+
+                                                                                               QUERY PLAN                                                                                               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=12.337..12.340 rows=1.00 loops=1)
+   Buffers: shared hit=662 read=8
+   ->  Append (actual time=5.303..12.290 rows=2.00 loops=1)
+         Buffers: shared hit=662 read=8
+         ->  Partial Aggregate (actual time=5.299..5.300 rows=1.00 loops=1)
+               Buffers: shared hit=198 read=4
+               ->  Index Scan using _hyper_3_258_chunk_ix_er_week_meter_time on _hyper_3_258_chunk (actual time=1.793..5.119 rows=195.00 loops=1)
+                     Index Cond: ((meter_id = 1000000000) AND (event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     Index Searches: 1
+                     Buffers: shared hit=198 read=4
+         ->  Partial Aggregate (actual time=6.979..6.979 rows=1.00 loops=1)
+               Buffers: shared hit=464 read=4
+               ->  Index Scan using _hyper_3_259_chunk_ix_er_week_meter_time on _hyper_3_259_chunk (actual time=1.059..6.702 rows=464.00 loops=1)
+                     Index Cond: ((meter_id = 1000000000) AND (event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     Index Searches: 1
+                     Buffers: shared hit=464 read=4
+ Planning:
+   Buffers: shared hit=176 read=11
+ Planning Time: 118.105 ms
+ Execution Time: 12.704 ms
+(20 rows)
+

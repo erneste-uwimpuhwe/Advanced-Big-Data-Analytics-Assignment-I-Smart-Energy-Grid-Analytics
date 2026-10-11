@@ -1,0 +1,13 @@
+mode,measure,median_ms,min_ms,max_ms
+raw,hourly_region,2955.7,2833.4,3093.7
+raw,daily_network,2168.2,2105.0,2539.7
+raw,weekly_network,820.1,795.2,904.4
+raw,meter_daily,9.1,6.0,12.6
+raw,completeness,979.1,899.6,1014.3
+raw,dashboard,7956.9,7846.6,8735.4
+aggregate,hourly_region,16.4,10.7,20.6
+aggregate,daily_network,24.6,14.5,35.2
+aggregate,weekly_network,11.1,6.0,15.7
+aggregate,meter_daily,1.8,1.5,2.4
+aggregate,completeness,20.3,8.0,22.2
+aggregate,dashboard,1117.8,882.5,2224.9

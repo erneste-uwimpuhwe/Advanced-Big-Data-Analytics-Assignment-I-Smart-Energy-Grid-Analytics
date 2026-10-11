@@ -1,0 +1,5 @@
+config,settings,train_rows,validation_rows,validation_MAE_kWh,validation_RMSE_kWh
+C1,Ridge(alpha=0.1),1680,1680,4.458,5.657
+C2,Ridge(alpha=1.0),1680,1680,4.469,5.672
+C3,Ridge(alpha=10.0),1680,1680,5.03,6.424
+C4,Ridge(alpha=100.0),1680,1680,8.492,12.161

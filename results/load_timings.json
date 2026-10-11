@@ -1,0 +1,22 @@
+{
+  "route": "CSV file + PostgreSQL COPY",
+  "expected_counts": {
+    "emitted_readings": 10696848,
+    "unique_readings": 10643735,
+    "duplicate_readings": 53113,
+    "delayed_unique_readings": 213090,
+    "missing_readings": 108265
+  },
+  "planned_readings": 10752000,
+  "consumed": 10696848,
+  "gen_start_cat": "2026-10-03T11:29:39+02:00",
+  "gen_end_cat": "2026-10-03T11:32:47+02:00",
+  "gen_seconds": 187.505,
+  "db_rows": 10696848,
+  "load_start_cat": "2026-10-03T11:32:51+02:00",
+  "final_commit_cat": "2026-10-03T11:35:03+02:00",
+  "load_seconds": 131.876,
+  "csv_bytes": 1161917346,
+  "csv_rows": 10696848,
+  "total_elapsed_seconds": 323.59
+}

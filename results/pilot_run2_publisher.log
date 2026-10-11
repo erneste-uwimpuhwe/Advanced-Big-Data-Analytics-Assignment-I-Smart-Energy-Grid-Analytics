@@ -1,0 +1,12 @@
+2026-10-03 11:15:41,354 INFO Connected to broker localhost:1883 (Success)
+2026-10-03 11:15:41,384 INFO Taken from generator and published: 500
+2026-10-03 11:15:41,408 INFO Taken from generator and published: 1000
+2026-10-03 11:15:41,420 INFO Taken from generator and published: 1500
+2026-10-03 11:15:41,448 INFO Taken from generator and published: 2000
+2026-10-03 11:15:42,269 INFO ===== PUBLISHER SUMMARY =====
+2026-10-03 11:15:42,270 INFO Dictionaries taken from generator : 2000
+2026-10-03 11:15:42,273 INFO   unique (meter_id, event_time)    : 1994
+2026-10-03 11:15:42,277 INFO   deliberate duplicate copies      : 6
+2026-10-03 11:15:42,284 INFO Publish call errors                : 0
+2026-10-03 11:15:42,285 INFO Messages acknowledged by broker    : 2000
+2026-10-03 11:15:42,286 INFO PUBACK callbacks counted           : 2000

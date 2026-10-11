@@ -1,0 +1,46 @@
+2026-10-03 11:29:39,811 INFO ============================================================
+2026-10-03 11:29:39,811 INFO dataset_info(): generator 3.0, 4000 meters, 28 days, 2026-09-01T00:00:00+02:00 to 2026-09-29T00:00:00+02:00 (exclusive)
+2026-10-03 11:29:39,812 INFO planned_readings: 10752000
+2026-10-03 11:29:39,812 INFO expected_counts.emitted_readings: 10696848
+2026-10-03 11:29:39,812 INFO expected_counts.unique_readings: 10643735
+2026-10-03 11:29:39,813 INFO expected_counts.duplicate_readings: 53113
+2026-10-03 11:29:39,813 INFO expected_counts.delayed_unique_readings: 213090
+2026-10-03 11:29:39,813 INFO expected_counts.missing_readings: 108265
+2026-10-03 11:29:39,813 INFO PHASE 1: capture generator stream to CSV (D:\auca_a1\data\energy_readings_full.csv)
+2026-10-03 11:30:03,718 INFO Consumed    1000000 dictionaries |    23.9 s |    41841 rows/s
+2026-10-03 11:30:27,027 INFO Consumed    2000000 dictionaries |    47.2 s |    42366 rows/s
+2026-10-03 11:30:47,983 INFO Consumed    3000000 dictionaries |    68.2 s |    44012 rows/s
+2026-10-03 11:31:04,726 INFO Consumed    4000000 dictionaries |    84.9 s |    47111 rows/s
+2026-10-03 11:31:27,949 INFO Consumed    5000000 dictionaries |   108.1 s |    46241 rows/s
+2026-10-03 11:31:42,641 INFO Consumed    6000000 dictionaries |   122.8 s |    48852 rows/s
+2026-10-03 11:31:59,604 INFO Consumed    7000000 dictionaries |   139.8 s |    50078 rows/s
+2026-10-03 11:32:13,903 INFO Consumed    8000000 dictionaries |   154.1 s |    51921 rows/s
+2026-10-03 11:32:26,722 INFO Consumed    9000000 dictionaries |   166.9 s |    53924 rows/s
+2026-10-03 11:32:38,552 INFO Consumed   10000000 dictionaries |   178.7 s |    55950 rows/s
+2026-10-03 11:32:47,328 INFO Generation finished: 10696848 dictionaries consumed in 187.5 s
+2026-10-03 11:32:51,240 INFO CSV data rows (excluding header): 10696848 (counted in 3.9 s)
+2026-10-03 11:32:51,241 INFO PHASE 2: load CSV into energy_readings with COPY
+2026-10-03 11:32:51,536 INFO energy_readings rows before load: 0
+2026-10-03 11:32:51,536 INFO CSV size: 1108.1 MB
+2026-10-03 11:33:01,966 INFO COPY progress:  10% of CSV sent to PostgreSQL
+2026-10-03 11:33:12,175 INFO COPY progress:  20% of CSV sent to PostgreSQL
+2026-10-03 11:33:24,563 INFO COPY progress:  30% of CSV sent to PostgreSQL
+2026-10-03 11:33:36,005 INFO COPY progress:  40% of CSV sent to PostgreSQL
+2026-10-03 11:33:50,058 INFO COPY progress:  50% of CSV sent to PostgreSQL
+2026-10-03 11:34:01,684 INFO COPY progress:  60% of CSV sent to PostgreSQL
+2026-10-03 11:34:18,098 INFO COPY progress:  70% of CSV sent to PostgreSQL
+2026-10-03 11:34:37,474 INFO COPY progress:  80% of CSV sent to PostgreSQL
+2026-10-03 11:34:51,484 INFO COPY progress:  90% of CSV sent to PostgreSQL
+2026-10-03 11:35:03,278 INFO COPY progress: 100% of CSV sent to PostgreSQL
+2026-10-03 11:35:26,744 INFO COPY committed in 131.9 s; rows in energy_readings: 10696848
+2026-10-03 11:35:26,769 INFO ===== FULL LOAD SUMMARY =====
+2026-10-03 11:35:26,769 INFO Route                              : CSV file + PostgreSQL COPY
+2026-10-03 11:35:26,769 INFO Dictionaries consumed (generator)  : 10696848
+2026-10-03 11:35:26,770 INFO CSV data rows                      : 10696848
+2026-10-03 11:35:26,771 INFO Committed rows in energy_readings  : 10696848
+2026-10-03 11:35:26,772 INFO expected_counts.emitted_readings   : 10696848
+2026-10-03 11:35:26,775 INFO CSV generation seconds             : 187.5
+2026-10-03 11:35:26,775 INFO Database load seconds (COPY->commit): 131.9
+2026-10-03 11:35:26,776 INFO Total elapsed seconds (gen start -> final commit): 323.6
+2026-10-03 11:35:26,778 INFO ALL COUNTS AGREE                   : True
+2026-10-03 11:35:26,844 INFO Timings saved to results/load_timings.json

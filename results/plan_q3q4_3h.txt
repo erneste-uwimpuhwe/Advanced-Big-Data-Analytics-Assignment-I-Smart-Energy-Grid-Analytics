@@ -1,0 +1,1722 @@
+                                                  QUERY PLAN                                                  
+--------------------------------------------------------------------------------------------------------------
+ Sort (actual time=26784.506..26793.848 rows=4000.00 loops=1)
+   Sort Key: energy_readings_3h.meter_id
+   Sort Method: quicksort  Memory: 222kB
+   Buffers: shared hit=3 read=121064
+   ->  Finalize HashAggregate (actual time=26779.977..26790.308 rows=4000.00 loops=1)
+         Group Key: energy_readings_3h.meter_id
+         Batches: 1  Memory Usage: 409kB
+         Buffers: shared read=121064
+         ->  Append (actual time=64.200..26001.146 rows=900000.00 loops=1)
+               Buffers: shared read=121064
+               ->  Partial HashAggregate (actual time=64.185..67.477 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_30_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=361
+                     ->  Seq Scan on _hyper_2_30_chunk (actual time=1.486..37.088 rows=31717.00 loops=1)
+                           Buffers: shared read=361
+               ->  Partial HashAggregate (actual time=85.927..88.581 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_31_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_31_chunk (actual time=0.630..46.198 rows=47505.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.154..85.685 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_32_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_32_chunk (actual time=0.654..41.909 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.771..81.840 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_33_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_33_chunk (actual time=0.638..40.419 rows=47522.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.601..86.301 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_34_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_34_chunk (actual time=0.967..42.917 rows=47533.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.901..84.680 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_35_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_35_chunk (actual time=1.028..40.372 rows=47481.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.243..86.289 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_36_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_36_chunk (actual time=1.021..45.388 rows=47524.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.157..85.310 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_37_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_37_chunk (actual time=0.927..41.848 rows=47496.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=92.988..95.721 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_38_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_38_chunk (actual time=0.757..47.038 rows=47513.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.728..85.467 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_39_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_39_chunk (actual time=1.021..42.096 rows=47523.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.253..86.874 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_40_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_40_chunk (actual time=0.648..42.033 rows=47477.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.723..84.387 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_41_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_41_chunk (actual time=1.356..41.320 rows=47522.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.079..81.575 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_42_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_42_chunk (actual time=0.618..39.038 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.900..82.799 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_43_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_43_chunk (actual time=0.768..41.095 rows=47548.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.359..86.375 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_44_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_44_chunk (actual time=0.927..44.969 rows=47490.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=125.322..128.453 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_45_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_45_chunk (actual time=10.102..83.768 rows=47491.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=94.388..97.430 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_46_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_46_chunk (actual time=0.511..48.886 rows=47510.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.780..86.096 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_47_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_47_chunk (actual time=0.649..43.881 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=75.202..77.214 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_48_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_48_chunk (actual time=0.525..41.259 rows=47516.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=74.688..77.041 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_49_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_49_chunk (actual time=0.883..36.865 rows=47491.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=75.772..77.936 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_50_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_50_chunk (actual time=0.611..36.487 rows=47498.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.859..85.867 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_51_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_51_chunk (actual time=0.717..40.266 rows=47510.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.903..82.466 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_52_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_52_chunk (actual time=0.991..38.806 rows=47534.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.215..83.293 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_53_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_53_chunk (actual time=0.494..39.011 rows=47546.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.119..85.758 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_54_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_54_chunk (actual time=0.621..40.431 rows=47518.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=70.102..72.968 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_55_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_55_chunk (actual time=0.642..35.961 rows=47522.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=104.815..107.582 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_56_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_56_chunk (actual time=5.452..65.977 rows=47506.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.852..86.240 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_57_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_57_chunk (actual time=1.101..41.075 rows=47547.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.963..82.564 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_58_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_58_chunk (actual time=0.596..39.132 rows=47470.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=121.394..124.069 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_59_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_59_chunk (actual time=14.519..78.378 rows=47464.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=77.710..80.286 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_60_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_60_chunk (actual time=0.630..37.469 rows=47521.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=107.412..110.567 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_61_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_61_chunk (actual time=1.311..65.996 rows=47496.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=101.545..104.078 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_62_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_62_chunk (actual time=2.503..63.563 rows=47493.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=103.208..105.997 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_63_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_63_chunk (actual time=5.175..61.270 rows=47541.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.124..81.681 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_64_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_64_chunk (actual time=0.644..38.622 rows=47481.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=97.876..100.113 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_65_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_65_chunk (actual time=1.256..59.337 rows=47524.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.011..82.640 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_66_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_66_chunk (actual time=0.683..39.534 rows=47508.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=111.297..113.978 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_67_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_67_chunk (actual time=2.306..72.322 rows=47505.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=136.759..139.736 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_68_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_68_chunk (actual time=14.218..88.513 rows=47529.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=82.736..85.106 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_69_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_69_chunk (actual time=0.787..44.365 rows=47511.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=176.234..178.559 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_70_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_70_chunk (actual time=0.762..137.215 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=82.475..85.619 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_71_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_71_chunk (actual time=0.890..41.992 rows=47523.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=118.991..121.316 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_72_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_72_chunk (actual time=5.870..85.534 rows=47501.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=95.140..98.216 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_73_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_73_chunk (actual time=0.616..57.952 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=65.726..67.563 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_74_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_74_chunk (actual time=0.810..37.040 rows=47504.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.066..80.654 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_75_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_75_chunk (actual time=0.898..51.652 rows=47537.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=64.191..65.701 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_76_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_76_chunk (actual time=0.779..33.058 rows=47536.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=76.806..79.115 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_77_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_77_chunk (actual time=0.638..37.389 rows=47533.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.006..83.219 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_78_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_78_chunk (actual time=0.612..38.694 rows=47495.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=76.825..79.734 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_79_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_79_chunk (actual time=0.716..37.596 rows=47517.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.902..81.745 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_80_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_80_chunk (actual time=0.709..39.217 rows=47521.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=75.658..78.427 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_81_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_81_chunk (actual time=0.728..37.224 rows=47528.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.958..87.822 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_82_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_82_chunk (actual time=0.677..41.284 rows=47509.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=74.734..77.992 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_83_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_83_chunk (actual time=0.616..37.192 rows=47517.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=85.431..88.761 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_84_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_84_chunk (actual time=0.728..42.105 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.588..87.366 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_85_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_85_chunk (actual time=0.774..40.953 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.683..84.553 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_86_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_86_chunk (actual time=0.726..40.257 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=72.412..75.011 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_87_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_87_chunk (actual time=0.640..36.319 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=64.355..65.781 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_88_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_88_chunk (actual time=1.233..33.395 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=91.128..93.879 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_89_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_89_chunk (actual time=0.694..46.665 rows=47492.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=65.242..66.822 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_90_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_90_chunk (actual time=0.838..32.891 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=77.319..79.874 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_91_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_91_chunk (actual time=0.967..38.686 rows=47528.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.250..82.041 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_92_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_92_chunk (actual time=0.621..37.749 rows=47505.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.333..81.242 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_93_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_93_chunk (actual time=0.674..38.718 rows=47490.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=96.845..99.931 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_94_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_94_chunk (actual time=2.637..49.633 rows=47528.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.276..86.641 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_95_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_95_chunk (actual time=0.978..41.668 rows=47490.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.068..84.600 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_96_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_96_chunk (actual time=0.644..42.320 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.862..88.610 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_97_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_97_chunk (actual time=0.700..41.451 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.415..81.248 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_98_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_98_chunk (actual time=0.750..38.039 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=76.993..80.044 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_99_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_99_chunk (actual time=0.652..38.111 rows=47514.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=86.309..89.310 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_100_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_100_chunk (actual time=1.076..41.761 rows=47529.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=98.025..100.838 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_101_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_101_chunk (actual time=0.651..48.823 rows=47535.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=94.532..97.079 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_102_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_102_chunk (actual time=1.974..47.805 rows=47537.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=100.111..103.444 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_103_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_103_chunk (actual time=0.740..49.244 rows=47541.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.444..88.605 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_104_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_104_chunk (actual time=5.251..43.534 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=100.616..103.369 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_105_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_105_chunk (actual time=3.041..56.448 rows=47539.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=103.415..106.428 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_106_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_106_chunk (actual time=6.095..56.898 rows=47500.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=88.448..89.717 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_107_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_107_chunk (actual time=0.602..43.515 rows=47532.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=95.510..98.129 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_108_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_108_chunk (actual time=0.780..45.814 rows=47484.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.645..83.737 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_109_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_109_chunk (actual time=1.396..40.359 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=77.681..80.275 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_110_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_110_chunk (actual time=0.663..37.527 rows=47473.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.813..82.042 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_111_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_111_chunk (actual time=0.856..38.547 rows=47468.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.584..82.233 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_112_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_112_chunk (actual time=0.756..39.423 rows=47536.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=78.735..81.332 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_113_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_113_chunk (actual time=1.053..37.903 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.534..87.352 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_114_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_114_chunk (actual time=0.641..39.224 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.686..87.296 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_115_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_115_chunk (actual time=0.746..40.015 rows=47491.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=92.271..95.142 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_116_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_116_chunk (actual time=0.672..46.648 rows=47542.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=86.552..89.771 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_117_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_117_chunk (actual time=0.618..42.242 rows=47524.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.679..88.009 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_118_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_118_chunk (actual time=1.107..42.557 rows=47497.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.349..86.897 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_119_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_119_chunk (actual time=0.750..40.256 rows=47543.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=73.377..76.214 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_120_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_120_chunk (actual time=0.925..35.504 rows=47500.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=94.145..97.358 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_121_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_121_chunk (actual time=0.593..45.829 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=109.423..112.849 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_122_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_122_chunk (actual time=0.856..50.301 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=89.345..92.515 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_123_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_123_chunk (actual time=0.607..44.539 rows=47535.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.919..84.286 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_124_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_124_chunk (actual time=0.644..39.449 rows=47513.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.500..82.306 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_125_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_125_chunk (actual time=0.820..39.320 rows=47553.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.158..83.826 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_126_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_126_chunk (actual time=1.001..40.103 rows=47466.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.242..82.645 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_127_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_127_chunk (actual time=0.620..38.297 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=90.557..93.016 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_128_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_128_chunk (actual time=0.705..43.429 rows=47547.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=96.799..99.415 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_129_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_129_chunk (actual time=2.292..49.330 rows=47513.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=89.551..92.029 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_130_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_130_chunk (actual time=1.156..44.218 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.177..85.944 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_131_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_131_chunk (actual time=0.790..40.666 rows=47556.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.953..89.426 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_132_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_132_chunk (actual time=0.618..41.009 rows=47519.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=100.941..103.970 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_133_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_133_chunk (actual time=0.666..48.767 rows=47500.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=88.759..91.793 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_134_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_134_chunk (actual time=0.564..42.721 rows=47539.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=89.871..93.009 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_135_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_135_chunk (actual time=0.821..44.436 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.742..86.390 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_136_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_136_chunk (actual time=0.800..40.047 rows=47494.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.470..87.509 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_137_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_137_chunk (actual time=0.689..40.731 rows=47496.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.681..82.187 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_138_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_138_chunk (actual time=0.667..38.782 rows=47507.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.592..86.234 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_139_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_139_chunk (actual time=0.652..40.496 rows=47537.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=78.437..81.467 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_140_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_140_chunk (actual time=0.721..38.149 rows=47520.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.743..83.428 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_141_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_141_chunk (actual time=0.594..39.076 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.126..80.406 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_142_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_142_chunk (actual time=0.582..37.873 rows=47524.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.186..86.464 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_143_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_143_chunk (actual time=0.685..42.291 rows=47525.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.923..84.738 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_144_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_144_chunk (actual time=0.941..39.415 rows=47536.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=96.519..99.937 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_145_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_145_chunk (actual time=1.359..46.962 rows=47475.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=90.656..93.274 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_146_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_146_chunk (actual time=0.774..44.289 rows=47547.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.145..87.857 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_147_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_147_chunk (actual time=0.848..40.492 rows=47511.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.702..83.815 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_148_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_148_chunk (actual time=0.767..38.940 rows=47499.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.287..83.844 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_149_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_149_chunk (actual time=0.586..39.334 rows=47499.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=71.205..73.773 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_150_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_150_chunk (actual time=0.624..35.680 rows=47508.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=66.762..69.879 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_151_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_151_chunk (actual time=0.708..33.646 rows=47551.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=76.608..79.517 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_152_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_152_chunk (actual time=0.912..37.290 rows=47512.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=76.735..79.572 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_153_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_153_chunk (actual time=0.662..37.502 rows=47513.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.263..84.474 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_154_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_154_chunk (actual time=0.929..39.555 rows=47536.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.492..88.309 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_155_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_155_chunk (actual time=0.809..41.068 rows=47516.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=87.658..90.456 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_156_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_156_chunk (actual time=1.116..42.906 rows=47486.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.917..87.987 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_157_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_157_chunk (actual time=0.863..40.732 rows=47541.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=78.371..80.400 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_158_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_158_chunk (actual time=0.842..38.432 rows=47501.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.174..83.662 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_159_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_159_chunk (actual time=1.097..40.502 rows=47536.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=89.137..91.393 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_160_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_160_chunk (actual time=0.761..42.354 rows=47524.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=101.870..104.288 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_161_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_161_chunk (actual time=0.848..50.364 rows=47537.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=93.610..96.024 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_162_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_162_chunk (actual time=0.820..49.355 rows=47531.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=91.010..93.494 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_163_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_163_chunk (actual time=1.219..46.498 rows=47504.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.840..81.590 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_164_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_164_chunk (actual time=0.759..38.021 rows=47515.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.581..85.121 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_165_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_165_chunk (actual time=1.267..40.696 rows=47554.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=109.760..112.803 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_166_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_166_chunk (actual time=0.984..54.106 rows=47503.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.455..86.801 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_167_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_167_chunk (actual time=0.699..41.021 rows=47481.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.804..85.918 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_168_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_168_chunk (actual time=1.243..39.830 rows=47500.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.374..82.844 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_169_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_169_chunk (actual time=0.607..38.712 rows=47537.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=86.210..89.323 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_170_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_170_chunk (actual time=0.779..40.962 rows=47534.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.997..88.766 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_171_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_171_chunk (actual time=0.585..42.580 rows=47498.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=93.720..97.991 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_172_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_172_chunk (actual time=0.787..46.991 rows=47516.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=85.853..88.399 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_173_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_173_chunk (actual time=0.675..41.038 rows=47516.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.505..84.095 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_174_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_174_chunk (actual time=0.657..40.106 rows=47506.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=93.625..96.832 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_175_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_175_chunk (actual time=2.970..51.103 rows=47556.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=110.877..115.010 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_176_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_176_chunk (actual time=7.440..65.611 rows=47496.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.590..85.992 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_177_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_177_chunk (actual time=1.808..40.967 rows=47528.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=76.064..78.630 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_178_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_178_chunk (actual time=0.635..36.103 rows=47508.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.761..87.334 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_179_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_179_chunk (actual time=1.002..41.265 rows=47569.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.776..84.542 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_180_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_180_chunk (actual time=0.941..39.857 rows=47500.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=68.344..70.846 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_181_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_181_chunk (actual time=0.756..33.943 rows=47520.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=81.727..84.601 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_182_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_182_chunk (actual time=0.676..40.205 rows=47534.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.101..82.890 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_183_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_183_chunk (actual time=0.740..38.308 rows=47544.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.035..87.823 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_184_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_184_chunk (actual time=0.684..39.363 rows=47525.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=709.505..711.125 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_185_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_185_chunk (actual time=6.521..665.116 rows=47541.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=2786.264..2789.580 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_186_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_186_chunk (actual time=296.334..2736.873 rows=47519.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=2478.546..2481.393 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_187_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_187_chunk (actual time=295.026..2405.043 rows=47502.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=153.550..156.120 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_188_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_188_chunk (actual time=39.722..105.887 rows=47544.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=106.759..109.436 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_189_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_189_chunk (actual time=3.925..59.745 rows=47520.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=112.172..114.729 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_190_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_190_chunk (actual time=4.069..60.818 rows=47517.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=82.445..85.645 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_191_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_191_chunk (actual time=0.612..40.544 rows=47517.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=85.187..87.890 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_192_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_192_chunk (actual time=0.894..41.646 rows=47523.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.599..87.852 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_193_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_193_chunk (actual time=0.636..40.893 rows=47514.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=86.296..89.171 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_194_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_194_chunk (actual time=1.007..41.986 rows=47522.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=103.165..105.722 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_195_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_195_chunk (actual time=0.921..54.032 rows=47476.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=88.782..91.780 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_196_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_196_chunk (actual time=0.910..44.863 rows=47469.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=86.849..89.567 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_197_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_197_chunk (actual time=0.678..41.883 rows=47487.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=72.541..75.232 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_198_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_198_chunk (actual time=1.114..36.429 rows=47545.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=135.318..138.165 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_199_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_199_chunk (actual time=1.228..72.191 rows=47533.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=106.577..109.325 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_200_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_200_chunk (actual time=0.583..55.580 rows=47507.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=91.911..94.247 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_201_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_201_chunk (actual time=0.611..45.190 rows=47493.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=90.955..93.844 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_202_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_202_chunk (actual time=1.149..44.773 rows=47533.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.051..87.997 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_203_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_203_chunk (actual time=0.838..40.948 rows=47533.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=106.660..109.544 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_204_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_204_chunk (actual time=4.405..59.182 rows=47541.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.865..86.625 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_205_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_205_chunk (actual time=0.641..40.857 rows=47511.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.499..87.103 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_206_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_206_chunk (actual time=0.794..41.201 rows=47501.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=87.489..90.392 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_207_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_207_chunk (actual time=0.652..42.684 rows=47490.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=87.888..90.890 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_208_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_208_chunk (actual time=0.609..42.599 rows=47508.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=95.006..97.501 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_209_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_209_chunk (actual time=0.614..44.760 rows=47525.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.866..87.822 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_210_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_210_chunk (actual time=0.556..40.941 rows=47545.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=86.156..88.642 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_211_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_211_chunk (actual time=0.653..40.343 rows=47549.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=94.818..97.240 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_212_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_212_chunk (actual time=0.615..44.630 rows=47473.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.872..87.765 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_213_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_213_chunk (actual time=1.117..40.838 rows=47534.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=82.682..84.963 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_214_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_214_chunk (actual time=1.151..41.323 rows=47497.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=87.298..90.004 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_215_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_215_chunk (actual time=0.481..41.221 rows=47550.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.678..89.410 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_216_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_216_chunk (actual time=0.650..41.813 rows=47508.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=83.852..86.497 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_217_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_217_chunk (actual time=0.638..40.058 rows=47477.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=85.250..87.902 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_218_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_218_chunk (actual time=3.222..48.334 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=66.250..68.051 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_219_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_219_chunk (actual time=0.651..32.959 rows=47542.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=73.062..75.377 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_220_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_220_chunk (actual time=0.701..35.522 rows=47564.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.239..84.464 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_221_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_221_chunk (actual time=0.897..39.255 rows=47505.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=70.133..73.356 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_222_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_222_chunk (actual time=0.591..34.586 rows=47512.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.380..86.481 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_223_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_223_chunk (actual time=0.895..41.141 rows=47492.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=84.768..87.827 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_224_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_224_chunk (actual time=3.279..45.718 rows=47523.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=84.532..86.929 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_225_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_225_chunk (actual time=2.296..44.443 rows=47501.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.383..83.419 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_226_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_226_chunk (actual time=1.243..40.785 rows=47517.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=85.705..87.668 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_227_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_227_chunk (actual time=2.323..47.227 rows=47550.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=81.658..84.491 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_228_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_228_chunk (actual time=2.037..40.099 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=83.344..86.244 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_229_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_229_chunk (actual time=0.888..39.576 rows=47539.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=85.633..88.397 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_230_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_230_chunk (actual time=0.623..42.598 rows=47509.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=74.340..77.044 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_231_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_231_chunk (actual time=0.792..36.452 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=82.979..85.153 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_232_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_232_chunk (actual time=0.974..39.706 rows=47523.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=82.696..85.599 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_233_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_233_chunk (actual time=0.780..40.813 rows=47482.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.697..83.212 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_234_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_234_chunk (actual time=0.737..39.868 rows=47538.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=74.414..76.816 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_235_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_235_chunk (actual time=0.599..36.521 rows=47531.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.489..83.606 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_236_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_236_chunk (actual time=0.626..39.469 rows=47516.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=78.912..81.632 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_237_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_237_chunk (actual time=0.714..37.694 rows=47470.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=76.816..79.172 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_238_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_238_chunk (actual time=0.717..38.369 rows=47521.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=80.364..82.930 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_239_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_239_chunk (actual time=0.649..38.424 rows=47548.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=79.051..81.931 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_240_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_240_chunk (actual time=1.128..38.092 rows=47478.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.608..82.384 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_241_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_241_chunk (actual time=0.596..38.032 rows=47512.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.256..82.481 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_242_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_242_chunk (actual time=0.700..38.282 rows=47531.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=90.275..92.836 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_243_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_243_chunk (actual time=0.692..42.383 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=112.652..115.750 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_244_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_244_chunk (actual time=0.685..53.275 rows=47570.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=101.764..105.353 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_245_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_245_chunk (actual time=0.705..52.286 rows=47475.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=96.021..98.943 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_246_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_246_chunk (actual time=0.717..46.471 rows=47507.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=73.838..76.429 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_247_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_247_chunk (actual time=0.772..35.395 rows=47505.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=80.404..83.148 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_248_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_248_chunk (actual time=0.868..39.098 rows=47494.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=79.364..82.605 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_249_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_249_chunk (actual time=0.684..38.866 rows=47481.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=89.643..92.325 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_250_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_250_chunk (actual time=0.888..44.772 rows=47526.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=124.335..126.893 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_251_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_251_chunk (actual time=0.907..70.413 rows=47547.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=97.952..100.826 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_252_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=540
+                     ->  Seq Scan on _hyper_2_252_chunk (actual time=0.591..48.247 rows=47518.00 loops=1)
+                           Buffers: shared read=540
+               ->  Partial HashAggregate (actual time=97.348..100.251 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_253_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=541
+                     ->  Seq Scan on _hyper_2_253_chunk (actual time=1.355..46.458 rows=47527.00 loops=1)
+                           Buffers: shared read=541
+               ->  Partial HashAggregate (actual time=37.541..41.555 rows=4000.00 loops=1)
+                     Group Key: _hyper_2_254_chunk.meter_id
+                     Batches: 1  Memory Usage: 409kB
+                     Buffers: shared read=180
+                     ->  Seq Scan on _hyper_2_254_chunk (actual time=1.335..18.831 rows=15819.00 loops=1)
+                           Buffers: shared read=180
+ Planning:
+   Buffers: shared hit=13044 read=871
+ Planning Time: 2826.980 ms
+ Execution Time: 26964.266 ms
+(1364 rows)
+
+                                                                                               QUERY PLAN                                                                                               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=43.593..43.668 rows=1.00 loops=1)
+   Buffers: shared hit=662 read=114
+   ->  Append (actual time=23.456..43.585 rows=57.00 loops=1)
+         Buffers: shared hit=662 read=114
+         ->  Partial Aggregate (actual time=23.453..23.454 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_198_chunk_ix_er_3h_meter_time on _hyper_2_198_chunk (actual time=16.585..16.643 rows=8.00 loops=1)
+                     Index Cond: ((meter_id = 1000000000) AND (event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.222..0.223 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_199_chunk_ix_er_3h_meter_time on _hyper_2_199_chunk (actual time=0.158..0.208 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.190..0.191 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_200_chunk_ix_er_3h_meter_time on _hyper_2_200_chunk (actual time=0.138..0.178 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.151..0.152 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_201_chunk_ix_er_3h_meter_time on _hyper_2_201_chunk (actual time=0.096..0.138 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.186..0.187 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_202_chunk_ix_er_3h_meter_time on _hyper_2_202_chunk (actual time=0.132..0.175 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=4.194..4.195 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_203_chunk_ix_er_3h_meter_time on _hyper_2_203_chunk (actual time=4.124..4.172 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.193..0.194 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_204_chunk_ix_er_3h_meter_time on _hyper_2_204_chunk (actual time=0.135..0.180 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.164..0.165 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_205_chunk_ix_er_3h_meter_time on _hyper_2_205_chunk (actual time=0.107..0.150 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.156..0.157 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_206_chunk_ix_er_3h_meter_time on _hyper_2_206_chunk (actual time=0.112..0.145 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=5.681..5.683 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_207_chunk_ix_er_3h_meter_time on _hyper_2_207_chunk (actual time=5.623..5.663 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.200..0.200 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_208_chunk_ix_er_3h_meter_time on _hyper_2_208_chunk (actual time=0.153..0.188 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.349..0.350 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_209_chunk_ix_er_3h_meter_time on _hyper_2_209_chunk (actual time=0.281..0.333 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.307..0.308 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_210_chunk_ix_er_3h_meter_time on _hyper_2_210_chunk (actual time=0.161..0.291 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.406..0.407 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_211_chunk_ix_er_3h_meter_time on _hyper_2_211_chunk (actual time=0.349..0.393 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.143..0.144 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_212_chunk_ix_er_3h_meter_time on _hyper_2_212_chunk (actual time=0.103..0.135 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.105..0.106 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_213_chunk_ix_er_3h_meter_time on _hyper_2_213_chunk (actual time=0.071..0.100 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.096..0.097 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_214_chunk_ix_er_3h_meter_time on _hyper_2_214_chunk (actual time=0.066..0.091 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.191..0.192 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_215_chunk_ix_er_3h_meter_time on _hyper_2_215_chunk (actual time=0.153..0.184 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.107..0.108 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_216_chunk_ix_er_3h_meter_time on _hyper_2_216_chunk (actual time=0.073..0.102 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.142..0.143 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_217_chunk_ix_er_3h_meter_time on _hyper_2_217_chunk (actual time=0.110..0.136 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.216..0.218 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_218_chunk_ix_er_3h_meter_time on _hyper_2_218_chunk (actual time=0.174..0.210 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.176..0.177 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_219_chunk_ix_er_3h_meter_time on _hyper_2_219_chunk (actual time=0.133..0.170 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.123..0.123 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_220_chunk_ix_er_3h_meter_time on _hyper_2_220_chunk (actual time=0.080..0.117 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.137..0.137 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_221_chunk_ix_er_3h_meter_time on _hyper_2_221_chunk (actual time=0.101..0.130 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.116..0.117 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_222_chunk_ix_er_3h_meter_time on _hyper_2_222_chunk (actual time=0.081..0.111 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.203..0.204 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_223_chunk_ix_er_3h_meter_time on _hyper_2_223_chunk (actual time=0.085..0.127 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.252..0.254 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_224_chunk_ix_er_3h_meter_time on _hyper_2_224_chunk (actual time=0.177..0.232 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.194..0.195 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_225_chunk_ix_er_3h_meter_time on _hyper_2_225_chunk (actual time=0.139..0.180 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.175..0.176 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_226_chunk_ix_er_3h_meter_time on _hyper_2_226_chunk (actual time=0.116..0.162 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.262..0.263 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_227_chunk_ix_er_3h_meter_time on _hyper_2_227_chunk (actual time=0.203..0.248 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.298..0.299 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_228_chunk_ix_er_3h_meter_time on _hyper_2_228_chunk (actual time=0.240..0.284 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.326..0.326 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_229_chunk_ix_er_3h_meter_time on _hyper_2_229_chunk (actual time=0.258..0.296 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.341..0.342 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_230_chunk_ix_er_3h_meter_time on _hyper_2_230_chunk (actual time=0.278..0.326 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.460..0.461 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_231_chunk_ix_er_3h_meter_time on _hyper_2_231_chunk (actual time=0.396..0.440 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.177..0.178 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_232_chunk_ix_er_3h_meter_time on _hyper_2_232_chunk (actual time=0.123..0.164 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.191..0.192 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_233_chunk_ix_er_3h_meter_time on _hyper_2_233_chunk (actual time=0.119..0.178 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.158..0.159 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_234_chunk_ix_er_3h_meter_time on _hyper_2_234_chunk (actual time=0.122..0.147 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.124..0.125 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_235_chunk_ix_er_3h_meter_time on _hyper_2_235_chunk (actual time=0.091..0.115 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.123..0.124 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_236_chunk_ix_er_3h_meter_time on _hyper_2_236_chunk (actual time=0.086..0.113 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.120..0.121 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_237_chunk_ix_er_3h_meter_time on _hyper_2_237_chunk (actual time=0.086..0.110 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.120..0.120 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_238_chunk_ix_er_3h_meter_time on _hyper_2_238_chunk (actual time=0.086..0.109 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.132..0.133 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_239_chunk_ix_er_3h_meter_time on _hyper_2_239_chunk (actual time=0.092..0.120 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.133..0.134 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_240_chunk_ix_er_3h_meter_time on _hyper_2_240_chunk (actual time=0.095..0.121 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.201..0.202 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_241_chunk_ix_er_3h_meter_time on _hyper_2_241_chunk (actual time=0.156..0.187 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.159..0.160 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_242_chunk_ix_er_3h_meter_time on _hyper_2_242_chunk (actual time=0.111..0.145 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.264..0.265 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_243_chunk_ix_er_3h_meter_time on _hyper_2_243_chunk (actual time=0.217..0.250 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.162..0.163 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_244_chunk_ix_er_3h_meter_time on _hyper_2_244_chunk (actual time=0.119..0.149 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.159..0.160 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_245_chunk_ix_er_3h_meter_time on _hyper_2_245_chunk (actual time=0.112..0.146 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.182..0.183 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_246_chunk_ix_er_3h_meter_time on _hyper_2_246_chunk (actual time=0.136..0.170 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.148..0.149 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_247_chunk_ix_er_3h_meter_time on _hyper_2_247_chunk (actual time=0.104..0.136 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.147..0.148 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_248_chunk_ix_er_3h_meter_time on _hyper_2_248_chunk (actual time=0.104..0.135 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.127..0.127 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_249_chunk_ix_er_3h_meter_time on _hyper_2_249_chunk (actual time=0.093..0.117 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.120..0.121 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_250_chunk_ix_er_3h_meter_time on _hyper_2_250_chunk (actual time=0.085..0.111 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.135..0.135 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_251_chunk_ix_er_3h_meter_time on _hyper_2_251_chunk (actual time=0.100..0.125 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.125..0.126 rows=1.00 loops=1)
+               Buffers: shared hit=12 read=2
+               ->  Index Scan using _hyper_2_252_chunk_ix_er_3h_meter_time on _hyper_2_252_chunk (actual time=0.090..0.115 rows=12.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=12 read=2
+         ->  Partial Aggregate (actual time=0.118..0.119 rows=1.00 loops=1)
+               Buffers: shared hit=11 read=2
+               ->  Index Scan using _hyper_2_253_chunk_ix_er_3h_meter_time on _hyper_2_253_chunk (actual time=0.085..0.108 rows=11.00 loops=1)
+                     Index Cond: (meter_id = 1000000000)
+                     Index Searches: 1
+                     Buffers: shared hit=11 read=2
+         ->  Partial Aggregate (actual time=0.190..0.191 rows=1.00 loops=1)
+               Buffers: shared hit=4 read=2
+               ->  Index Scan using _hyper_2_254_chunk_ix_er_3h_meter_time on _hyper_2_254_chunk (actual time=0.105..0.112 rows=4.00 loops=1)
+                     Index Cond: ((meter_id = 1000000000) AND (event_time >= '2026-09-22 00:00:00+02'::timestamp with time zone) AND (event_time < '2026-09-29 00:00:00+02'::timestamp with time zone))
+                     Index Searches: 1
+                     Buffers: shared hit=4 read=2
+ Planning:
+   Buffers: shared hit=641 read=30
+ Planning Time: 74.129 ms
+ Execution Time: 61.354 ms
+(350 rows)
+
